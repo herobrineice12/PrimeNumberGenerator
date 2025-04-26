@@ -1,31 +1,39 @@
 #include <iostream>
-#include <Windows.h>
+#include <cmath>
 
-void test(int num);
 bool check(int num);
+void test(int *var);
 
 int main() {
-	int num = 1;
-	int* var = &num;
+    int num = 1;
+    int* var = &num;
 
-	std::cout >> "Iniciando...\n";
-	Sleep(5000); check(num);
-}
+    test(var);
 
-void test(int num) {
-	while (true) {
-		if (check(var)) {
-			std::cout << var << std::endl;
-		}
-		(*num++);
-	}
+    return 0;
 }
 
 bool check(int num) {
-	for (i = 2; i <= sqrt(*var); i++) {
-		if ((*var) % i == 0) {
-			return false;
-		}
-	}
-	return true;
+    int raiz = sqrt(num);
+    if (num != 2 && num % 2 == 0) {
+        return false;
+    } else {
+        for (int i = 2; i <= raiz; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+void test(int *var) {
+    while (true) {
+        if (check(*var)) {
+            std::cout << *var << std::endl;
+        }
+
+        (*var)++;
+    }
 }
