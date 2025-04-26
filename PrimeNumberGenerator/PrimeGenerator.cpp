@@ -15,10 +15,10 @@ int main() {
 
 bool check(int num) {
     int raiz = sqrt(num);
-    if (num != 2 && num % 2 == 0) {
+    if (num != 2 && num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0) {
         return false;
     } else {
-        for (int i = 2; i <= raiz; i++) {
+        for (int i = 11; i <= raiz; i+= 2) {
             if (num % i == 0) {
                 return false;
             }
