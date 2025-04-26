@@ -15,7 +15,7 @@ int main() {
 
 bool check(int num) {
     int raiz = sqrt(num);
-    if (num != 2 && num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0) {
+    if (num % 3 == 0 || num % 5 == 0 || num % 7 == 0) {
         return false;
     } else {
         for (int i = 11; i <= raiz; i+= 2) {
@@ -34,6 +34,10 @@ void test(int *var) {
             std::cout << *var << std::endl;
         }
 
-        (*var)++;
+        if (*var == 2) {
+            (*var)++;
+        } else {
+            (*var) += 2;
+        }
     }
 }
